@@ -113,7 +113,7 @@ if (isset($_POST['insert'])){
           </div>
      </div>
      <div class="footer-copyright text-center py-3">© 2022 Copyright:
-          <a href=""> @kosynka</a>
+          <a href="" class="text-light"> @kosynka</a>
      </div>
 </footer>
 
