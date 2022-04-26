@@ -55,9 +55,9 @@
                 Представления
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="http://localhost/db_manager/viewes/1.php">Представление 1</a>
-                    <a class="dropdown-item" href="http://localhost/db_manager/viewes/1.php">Представление 2</a>
-                    <a class="dropdown-item" href="http://localhost/db_manager/viewes/1.php">Представление 3</a>
+                    <a class="dropdown-item" href="http://localhost/db_manager/views/1.php">Представление 1</a>
+                    <a class="dropdown-item" href="http://localhost/db_manager/views/2.php">Представление 2</a>
+                    <a class="dropdown-item" href="http://localhost/db_manager/views/3.php">Представление 3</a>
                 </div>
             </li>
 

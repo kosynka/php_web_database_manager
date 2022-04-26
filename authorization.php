@@ -12,7 +12,7 @@ if (isset($_POST['insert'])) {
     });
     try {
         odbc_connect("Sayat", $info['login'], $info['password']);
-        header("Location: input_values.php");
+        header("Location: tables/clients.php");
     }
     catch (Exception $e) {
         echo "<script>alert('Логин или пароль неправильный')</script>";
