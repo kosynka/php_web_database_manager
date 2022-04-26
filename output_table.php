@@ -9,31 +9,31 @@ switch ($table_name) {
         $table_rows = ['client_name', 'iin', 'zip_address', 'bank_code', 'bank_account', 'client_type'];
         break;
     case 'Bank':
-        $table_rows = [];
+        $table_rows = ['bank_code', 'bank_name', 'bank_address'];
         break;
     case 'Contracts':
-        $table_rows = [];
+        $table_rows = ['iin', 'contract_num', 'date_of_conclusion', 'period_of_contract'];
         break;
     case 'Payment':
-        $table_rows = [];
+        $table_rows = ['iin', 'contract_num', 'payment_date', 'total'];
         break;
     case 'PersonalAccount':
-        $table_rows = [];
+        $table_rows = ['iin', 'balance_at_the_beginning_of_month', 'income_sum', 'cost_of_rendered_services', 'month', 'year'];
         break;
     case 'ServiceCategories':
-        $table_rows = [];
+        $table_rows = ['service_category_code', 'name_of_service_category', 'remark'];
         break;
     case 'ServiceContract':
-        $table_rows = [];
+        $table_rows = ['contract_num', 'service_code', 'tariff_plan_code'];
         break;
     case 'Services':
-        $table_rows = [];
+        $table_rows = ['service_code', 'name_of_service', 'service_category_code'];
         break;
     case 'TariffPlan':
-        $table_rows = [];
+        $table_rows = ['tariff_plan_code', 'price', 'tariff_validity_period'];
         break;
     case 'Traffic':
-        $table_rows = [];
+        $table_rows = ['date', 'session_start_time', 'break_time', 'iin', 'numb_of_transferred_bytes', 'numb_of_received_bytes', 'service_code'];
         break;
 }
 

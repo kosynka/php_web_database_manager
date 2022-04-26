@@ -11,27 +11,29 @@
                 Таблицы
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Таблица Банк</a>
-                    <a class="dropdown-item" href="#">Таблица Клиенты</a>
-                    <a class="dropdown-item" href="#">Таблица Договора</a>
-                    <a class="dropdown-item" href="#">Таблица Оплата</a>
-                    <a class="dropdown-item" href="#">Таблица Личного счета</a>
-                    <a class="dropdown-item" href="#">Таблица Категории услуг</a>
-                    <a class="dropdown-item" href="#">Таблица Услуги и Договора</a>
-                    <a class="dropdown-item" href="#">Таблица Услуги</a>
-                    <a class="dropdown-item" href="#">Таблица Тарифный план</a>
-                    <a class="dropdown-item" href="#">Таблица Траффик</a>
+                    <a class="dropdown-item" href="http://localhost/db_manager/tables/bank.php">Таблица Банк</a>
+                    <a class="dropdown-item" href="http://localhost/db_manager/tables/clients.php">Таблица Клиенты</a>
+                    <a class="dropdown-item" href="http://localhost/db_manager/tables/contracts.php">Таблица Договора</a>
+                    <a class="dropdown-item" href="http://localhost/db_manager/tables/payment.php">Таблица Оплата</a>
+                    <a class="dropdown-item" href="http://localhost/db_manager/tables/personal_account.php">Таблица Личного счета</a>
+                    <a class="dropdown-item" href="http://localhost/db_manager/tables/service_categories.php">Таблица Категории услуг</a>
+                    <a class="dropdown-item" href="http://localhost/db_manager/tables/service_contract.php">Таблица Услуги и Договора</a>
+                    <a class="dropdown-item" href="http://localhost/db_manager/tables/services.php">Таблица Услуги</a>
+                    <a class="dropdown-item" href="http://localhost/db_manager/tables/tariff_plan.php">Таблица Тарифный план</a>
+                    <a class="dropdown-item" href="http://localhost/db_manager/tables/traffic.php">Таблица Траффик</a>
                 </div>
             </li>
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Запросы
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Запрос 1</a>
-                    <a class="dropdown-item" href="#">Запрос 2</a>
-                    <a class="dropdown-item" href="#">Запрос 3</a>
+                    <a class="dropdown-item" href="http://localhost/db_manager/queries/1.php">Запрос 1</a>
+                    <a class="dropdown-item" href="http://localhost/db_manager/queries/2.php">Запрос 2</a>
+                    <a class="dropdown-item" href="http://localhost/db_manager/queries/3.php">Запрос 3</a>
+                    <a class="dropdown-item" href="http://localhost/db_manager/queries/4.php">Запрос 4</a>
+                    <a class="dropdown-item" href="http://localhost/db_manager/queries/5.php">Запрос 5</a>
                 </div>
             </li>
 

@@ -1,5 +1,5 @@
 <?php
-include('config.php');
+include('../config.php');
 session_start();
 
 function getData(){
@@ -48,7 +48,7 @@ if (isset($_POST['update'])){
 </head>
 <body>
 
-<?php include('header.php'); ?>
+<?php include('../header.php'); ?>
 
 <div class="container">
      <br>
@@ -107,13 +107,13 @@ if (isset($_POST['update'])){
                $_SESSION['query'] = $query;
                $_SESSION['table_name'] = $table_name;
                
-               include('output_table.php');
+               include('../output_table.php');
                ?>
           </div>
      </div>
 </div>
 
-<?php include('footer.php'); ?>
+<?php include('../footer.php'); ?>
 
 </body>
 </html>
