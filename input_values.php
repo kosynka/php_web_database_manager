@@ -1,5 +1,6 @@
 <?php
 include('config.php');
+session_start();
 
 function getData(){
      $data = array();
@@ -16,6 +17,20 @@ if (isset($_POST['insert'])){
      $info = getData();
      $insert = "INSERT INTO [Clients] ([client_name], [iin], [zip_address], [bank_code], [bank_account], [client_type]) VALUES ('$info[0]', '$info[1]', '$info[2]', '$info[3]', '$info[4]', '$info[5]')";
      $result = odbc_exec($connection, $insert);
+     odbc_close($connection);
+}
+
+if (isset($_POST['delete'])){
+     $info = getData();
+     $delete = "DELETE FROM [Clients] WHERE [iin] = '$info[1]'";
+     $result = odbc_exec($connection, $delete);
+     odbc_close($connection);
+}
+
+if (isset($_POST['update'])){
+     $info = getData();
+     $update = "UPDATE [Clients] SET [client_name] = '$info[0]', [iin] = '$info[1]', [zip_address] = '$info[2]', [bank_code] = '$info[3]', [bank_account] = '$info[4]', [client_type] = '$info[5]' WHERE [iin] = '$info[1]'";
+     $result = odbc_exec($connection, $update);
      odbc_close($connection);
 }
 ?>
@@ -37,7 +52,7 @@ if (isset($_POST['insert'])){
 
 <div class="container">
      <br>
-     <h3 class="text-center">Ввод данных в таблицу Клиенты</h3>
+     <h3 class="text-center mb-3">Ввод данных в таблицу Клиенты</h3>
      <div class="row">
           <div class="col-sm">
                <form method="POST">
@@ -76,7 +91,9 @@ if (isset($_POST['insert'])){
                          </select>
                     </div>
                     <div class="btn-group">
-                         <button type="submit" class="btn btn-primary" name="insert">Ввести данные</button>
+                         <button type="submit" class="btn btn-success btn-lg btn-outline-light" name="insert">Добавить</button>
+                         <button type="submit" class="btn btn-primary btn-lg btn-outline-light" name="update">Изменить</button>
+                         <button type="submit" class="btn btn-danger btn-lg btn-outline-light" name="delete">Удалить</button>
                     </div>
                </form>
           </div>
@@ -84,7 +101,13 @@ if (isset($_POST['insert'])){
           <div class="col-sm">
                <br>
                <?php
-                    include('output_table.php');
+               $query = "SELECT [client_name],[iin],[zip_address],[bank_code],[bank_account],[client_type] FROM [Clients]";
+               $table_name = 'Clients';
+               
+               $_SESSION['query'] = $query;
+               $_SESSION['table_name'] = $table_name;
+               
+               include('output_table.php');
                ?>
           </div>
      </div>
