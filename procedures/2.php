@@ -2,14 +2,6 @@
 include('../config.php');
 session_start();
 
-function getData(){
-     $data = array();
-     $data[0] = $_POST['bank_code'];
-     $data[1] = $_POST['bank_name'];
-     $data[2] = $_POST['bank_address'];
-     return $data;
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -32,22 +24,16 @@ function getData(){
      <div class="row">
           <div class="col-sm">
                <br>
-               <h2>Объем переданной и полученной информации каждым из клиентов</h2>
+               <h2>Из таблицы Движение выбрать строки по условию: количество переданных байт>количества полученных</h2>
           </div>
 
           <div class="col-sm">
                <br>
                <?php
-               $query = "SELECT iin AS 'ИИН',
-                    SUM(numb_of_transferred_bytes) AS 'Объем переданной информации',
-                    SUM(numb_of_received_bytes) AS 'Объем полученной информации'
-               FROM Traffic
-               GROUP BY iin";
-
-               $_SESSION['query'] = $query;
-               $_SESSION['names'] = 'ИИН,Объем переданной информации,Объем полученной информации';
-               $_SESSION['rows_len'] = 3;
-               
+               $_SESSION['query'] = "SELECT FORMAT(numb_of_received_bytes, 'N0', 'en-us') AS 'количество полученных байт', FORMAT(numb_of_transferred_bytes , 'N0', 'en-us') AS 'количество переданных байт' FROM Traffic
+               WHERE numb_of_transferred_bytes > numb_of_received_bytes";
+               $_SESSION['names'] = 'количество полученных байт,количество переданных байт';
+               $_SESSION['rows_len'] = 2;
                include('output.php');
                ?>
           </div>

@@ -32,21 +32,19 @@ function getData(){
      <div class="row">
           <div class="col-sm">
                <br>
-               <h2>Объем переданной и полученной информации каждым из клиентов</h2>
+               <h2>Вычислить продолжительность сеансов связи</h2>
           </div>
 
           <div class="col-sm">
                <br>
                <?php
-               $query = "SELECT iin AS 'ИИН',
-                    SUM(numb_of_transferred_bytes) AS 'Объем переданной информации',
-                    SUM(numb_of_received_bytes) AS 'Объем полученной информации'
-               FROM Traffic
-               GROUP BY iin";
+               $query = "SELECT date AS 'Дата',
+                         DATEDIFF(SS, session_start_time, break_time) AS 'Продолжительность сеанса связи в секундах'
+                         FROM Traffic";
 
                $_SESSION['query'] = $query;
-               $_SESSION['names'] = 'ИИН,Объем переданной информации,Объем полученной информации';
-               $_SESSION['rows_len'] = 3;
+               $_SESSION['names'] = 'Дата,Продолжительность сеанса связи в секундах';
+               $_SESSION['rows_len'] = 2;
                
                include('output.php');
                ?>

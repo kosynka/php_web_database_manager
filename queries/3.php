@@ -32,20 +32,20 @@ function getData(){
      <div class="row">
           <div class="col-sm">
                <br>
-               <h2>Объем переданной и полученной информации каждым из клиентов</h2>
+               <h2>Остаток денежных средств на лицевом счету каждого из клиентов</h2>
           </div>
 
           <div class="col-sm">
                <br>
                <?php
-               $query = "SELECT iin AS 'ИИН',
-                    SUM(numb_of_transferred_bytes) AS 'Объем переданной информации',
-                    SUM(numb_of_received_bytes) AS 'Объем полученной информации'
-               FROM Traffic
-               GROUP BY iin";
+               $query = "SELECT	Clients.client_name AS 'Имя клиента',
+                                   PersonalAccount.iin AS 'ИИН',
+                                   balance_at_the_beginning_of_month AS 'Остаток денежных средств'
+                         FROM Clients, PersonalAccount
+                         WHERE Clients.iin = PersonalAccount.iin";
 
                $_SESSION['query'] = $query;
-               $_SESSION['names'] = 'ИИН,Объем переданной информации,Объем полученной информации';
+               $_SESSION['names'] = 'Имя клиента,ИИН,Остаток денежных средств';
                $_SESSION['rows_len'] = 3;
                
                include('output.php');

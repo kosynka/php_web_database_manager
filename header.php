@@ -38,24 +38,26 @@
             </li>
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Процедуры
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Процедура 1</a>
-                    <a class="dropdown-item" href="#">Процедура 2</a>
-                    <a class="dropdown-item" href="#">Процедура 3</a>
+                    <a class="dropdown-item" href="http://localhost/db_manager/procedures/1.php">Процедура 1</a>
+                    <a class="dropdown-item" href="http://localhost/db_manager/procedures/2.php">Процедура 2</a>
+                    <a class="dropdown-item" href="http://localhost/db_manager/procedures/3.php">Процедура 3</a>
+                    <a class="dropdown-item" href="http://localhost/db_manager/procedures/4.php">Процедура 4</a>
+
                 </div>
             </li>
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Представления
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Представление 1</a>
-                    <a class="dropdown-item" href="#">Представление 2</a>
-                    <a class="dropdown-item" href="#">Представление 3</a>
+                    <a class="dropdown-item" href="http://localhost/db_manager/viewes/1.php">Представление 1</a>
+                    <a class="dropdown-item" href="http://localhost/db_manager/viewes/1.php">Представление 2</a>
+                    <a class="dropdown-item" href="http://localhost/db_manager/viewes/1.php">Представление 3</a>
                 </div>
             </li>
 

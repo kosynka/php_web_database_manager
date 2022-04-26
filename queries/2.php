@@ -32,21 +32,21 @@ function getData(){
      <div class="row">
           <div class="col-sm">
                <br>
-               <h2>Объем переданной и полученной информации каждым из клиентов</h2>
+               <h2>Перечень категорий услуг по которым заключены договора в «I-ом» месяце</h2>
           </div>
 
           <div class="col-sm">
                <br>
                <?php
-               $query = "SELECT iin AS 'ИИН',
-                    SUM(numb_of_transferred_bytes) AS 'Объем переданной информации',
-                    SUM(numb_of_received_bytes) AS 'Объем полученной информации'
-               FROM Traffic
-               GROUP BY iin";
+               $query = "SELECT    ServiceCategories.name_of_service_category AS 'Название категории услуг',
+                                   Contracts.date_of_conclusion AS 'Дата заключения'
+                         FROM      ServiceCategories, Contracts, [Services]
+                         WHERE	ServiceCategories.service_category_code = [Services].service_category_code
+                                   AND Contracts.date_of_conclusion like '%-10-%'";
 
                $_SESSION['query'] = $query;
-               $_SESSION['names'] = 'ИИН,Объем переданной информации,Объем полученной информации';
-               $_SESSION['rows_len'] = 3;
+               $_SESSION['names'] = 'Название категории услуг,Дата заключения';
+               $_SESSION['rows_len'] = 2;
                
                include('output.php');
                ?>

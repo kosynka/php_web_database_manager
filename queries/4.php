@@ -32,21 +32,19 @@ function getData(){
      <div class="row">
           <div class="col-sm">
                <br>
-               <h2>Объем переданной и полученной информации каждым из клиентов</h2>
+               <h2>Список клиентов-юр.лиц в названии которых встречается слово «…»</h2>
           </div>
 
           <div class="col-sm">
                <br>
                <?php
-               $query = "SELECT iin AS 'ИИН',
-                    SUM(numb_of_transferred_bytes) AS 'Объем переданной информации',
-                    SUM(numb_of_received_bytes) AS 'Объем полученной информации'
-               FROM Traffic
-               GROUP BY iin";
+               $query = "SELECT client_name AS 'Название компании(юр лицо)'
+                         FROM Clients
+                         WHERE client_type = 0 AND client_name LIKE '%mp%'";
 
                $_SESSION['query'] = $query;
-               $_SESSION['names'] = 'ИИН,Объем переданной информации,Объем полученной информации';
-               $_SESSION['rows_len'] = 3;
+               $_SESSION['names'] = 'Название компании(юр лицо)';
+               $_SESSION['rows_len'] = 1;
                
                include('output.php');
                ?>
