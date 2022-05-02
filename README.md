@@ -1,6 +1,7 @@
-Это мой мини проект, через данное приложение можно управлять БД моей курсовой работы
+## Это мой мини проект, через данное приложение можно управлять БД моей курсовой работы
 
 БД:
+```sql
 CREATE DATABASE Billing_system;
 GO
 Use Billing_system;
@@ -174,5 +175,8 @@ ALTER TABLE PersonalAccount WITH CHECK
 GO
 ALTER TABLE PersonalAccount CHECK CONSTRAINT [Personal_Account_fk0]
 GO
+```
 
-login page = http://localhost/db_manager/authorization.php
+```
+login page - /db_manager/authorization.php
+```
